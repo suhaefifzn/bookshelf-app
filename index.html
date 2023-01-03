@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suhaefi - Bookshelf App</title>
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="stylesheet" href="./src/css/responsive.css" />
+    <!-- Feather icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="container">
+      <header id="main-header">
+        <div class="jumbotron">
+          <div class="title">
+            <h1><span class="name">Suhaefi</span> Bookshelf App</h1>
+          </div>
+          <img src="./src/img/bg.jpg" alt="Background Perpustakaan" />
+        </div>
+      </header>
+      <main id="content">
+        <div class="main-shelf">
+          <form class="form-add-book" id="form-add-book">
+            <div class="input-group">
+              <label for="title-book">Judul</label>
+              <input
+                type="text"
+                name="title-book"
+                id="title-book"
+                placeholder="Judul Buku"
+                autofocus
+              />
+            </div>
+            <div class="input-group">
+              <label for="author-book">Penulis</label>
+              <input
+                type="text"
+                name="author-book"
+                id="author-book"
+                placeholder="Penulis Buku"
+              />
+            </div>
+            <div class="input-group">
+              <label for="year-book">Tahun</label>
+              <input
+                type="number"
+                name="year-book"
+                id="year-book"
+                placeholder="Tahun Buku Diterbitkan"
+              />
+            </div>
+            <div class="form-check-group">
+              <input
+                type="checkbox"
+                name="check-finished-reading"
+                id="check-finished-reading"
+              />
+              <label for="check-finished-reading">Buku selesai dibaca</label>
+            </div>
+            <button class="btn-submit">Tambah Buku</button>
+          </form>
+          <div class="sub-main-shelf">
+            <div class="not-finished-reading">
+              <h2>Belum Selesai Dibaca</h2>
+              <div class="book-list" id="not-finished-reading">
+                <div class="book-item">
+                  <div class="book-detail">
+                    <h3 class="book-detail__title">Gagal Menjadi Manusia</h3>
+                    <span class="book-detail__author">Dazai Osamu</span>
+                    <span class="book-detail__year">2022</span>
+                  </div>
+                  <div class="btn-book-list-wrapper">
+                    <div class="btn-done" title="Done">
+                      <i data-feather="check" class="btn-icon"></i>
+                    </div>
+                    <div class="btn-remove" title="Remove">
+                      <i data-feather="trash" class="btn-icon"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="finished-reading">
+              <h2>Buku Selesai Dibaca</h2>
+              <div class="book-list" id="finished-reading"></div>
+            </div>
+          </div>
+        </div>
+        <div class="search-shelf">
+          <form class="form-search-book" id="form-search-book">
+            <div class="search-group">
+              <input
+                type="text"
+                name="search-book-by-title"
+                id="search-book-by-title"
+                placeholder="Masukkan judul buku"
+              />
+              <button class="btn-search">
+                <i data-feather="search" class="btn-icon"></i>
+                Cari
+              </button>
+            </div>
+          </form>
+          <form class="form-book-found">
+            <div class="input-group">
+              <label for="book-title">Judul</label>
+              <input type="text" name="book-title" id="book-title" />
+            </div>
+            <div class="input-group">
+              <label for="book-author">Penulis</label>
+              <input type="text" name="book-author" id="book-author" />
+            </div>
+            <div class="input-group">
+              <label for="book-year">Tahun</label>
+              <input type="number" name="book-year" id="book-year" />
+            </div>
+            <button class="btn-update">Update</button>
+          </form>
+        </div>
+        <div id="toast">
+          <span> Buku berhasil dihapus ... </span>
+        </div>
+      </main>
+    </div>
+    <script src="./src/js/script.js"></script>
+  </body>
+</html>

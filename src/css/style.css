@@ -1,0 +1,334 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  background-color: #272727;
+}
+
+#main-header {
+  width: 100%;
+}
+
+.jumbotron {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 400px;
+  justify-content: center;
+}
+
+.jumbotron .title {
+  margin-top: 80px;
+  z-index: 10;
+  color: #bf9c77;
+}
+
+.title h1 {
+  font-family: "Silkscreen", cursive;
+  font-size: 50px;
+  text-shadow: 5px 2px 1px rgba(0, 0, 0, 1);
+}
+
+.jumbotron img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: blur(3px);
+}
+
+#content {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 40px;
+  background-color: #fff;
+  margin-top: -200px;
+  margin-bottom: 100px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 10px;
+  z-index: 100;
+}
+
+/* ? Rak tambah buku */
+.main-shelf {
+  flex-basis: 70%;
+  flex-direction: column;
+  border-right: 2px solid #272727;
+  padding-right: 30px;
+}
+
+.form-add-book {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+  border-bottom: 2px solid #272727;
+  gap: 16px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input-group input,
+.search-group input {
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 0;
+}
+
+.input-group input:focus,
+.search-group input:focus {
+  outline: none !important;
+  box-shadow: 0 0 6px 4px rgba(45, 105, 193, 0.5);
+}
+
+.input-group input::placeholder,
+.search-group input::placeholder {
+  font-size: 12px;
+}
+
+.form-check-group {
+  display: flex;
+  padding: 5px 0;
+  gap: 7px;
+}
+
+.form-check-group label {
+  font-size: 12px;
+}
+
+.btn-submit {
+  padding: 10px;
+  background-color: #2d69c1;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: #1150af;
+  transition: 0.3s linear;
+  color: #fff;
+  box-shadow: 0 0 6px 4px rgba(45, 105, 193, 0.5);
+}
+
+/* ? Rak belum selesai dibaca dan selesai dibaca */
+.sub-main-shelf {
+  margin-top: 40px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.not-finished-reading,
+.finished-reading {
+  flex-basis: 45%;
+  padding: 20px;
+  min-height: 300px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.3);
+}
+
+.not-finished-reading h2,
+.finished-reading h2 {
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 18px;
+  border-bottom: 1px solid #272727;
+}
+
+.book-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.book-item .book-detail h3 {
+  font-size: 15px;
+}
+
+.book-item .book-detail span {
+  font-size: 12px;
+}
+
+.book-item {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-bottom: 1px solid #8b8b8b;
+}
+
+.book-item .book-detail {
+  display: flex;
+  gap: 3px;
+  flex-direction: column;
+  flex-basis: 80%;
+}
+
+.book-item .btn-book-list-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-book-list-wrapper .btn-icon {
+  width: 0.8em;
+}
+
+.btn-done,
+.btn-remove,
+.btn-undo {
+  cursor: pointer;
+}
+
+.btn-done,
+.btn-remove,
+.btn-undo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+}
+
+.btn-done {
+  background-color: #1bb10d;
+}
+
+.btn-remove {
+  background-color: #af1111;
+}
+
+.btn-undo {
+  background-color: #8d8d8d;
+}
+
+/* ? Rak pencarian buku */
+.search-shelf {
+  display: flex;
+  flex-basis: 28%;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.form-search-book .search-group {
+  display: flex;
+}
+
+.search-group input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  width: 100%;
+}
+
+.btn-search {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 10px;
+  border: 0;
+  background-color: #2d69c1;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.btn-search:hover {
+  background-color: #1150af;
+  transition: 0.3s linear;
+  color: #fff;
+  box-shadow: 0 0 6px 4px rgba(45, 105, 193, 0.5);
+}
+
+.btn-icon {
+  width: 1em;
+}
+
+/* ? Form jika buku ditemukan */
+.form-book-found {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.3);
+}
+
+.form-book-found .input-group label {
+  font-size: 14px;
+}
+
+.form-book-found .input-group input {
+  font-size: 12px;
+  color: #8b8b8b;
+}
+
+.btn-update {
+  padding: 10px;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-update {
+  background-color: #df9647;
+}
+
+.btn-update:hover {
+  color: #fff;
+  transition: 0.3s linear;
+}
+
+.btn-update:hover {
+  background-color: #c27422;
+}
+
+.txt-not-found {
+  font-size: 12px;
+  color: #af1111;
+}
+
+#toast {
+  position: fixed;
+  padding: 20px;
+  z-index: 30;
+  bottom: 3%;
+  background-color: #000;
+  border-radius: 5px;
+  left: 2%;
+  display: none;
+}
+
+#toast.show {
+  transition: 0.5s;
+  display: block;
+}
+
+#toast span {
+  color: #f2f2f2;
+}

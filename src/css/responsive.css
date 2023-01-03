@@ -1,0 +1,34 @@
+@media (max-width: 1000px) {
+  #content {
+    flex-direction: column;
+    gap: 100px;
+  }
+
+  .main-shelf {
+    border-right: 0;
+    border-bottom: 2px solid #272727;
+    padding-bottom: 60px;
+  }
+}
+
+@media (max-width: 936px) {
+  .sub-main-shelf {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 800px) {
+  .title h1 {
+    font-size: 36px;
+  }
+}
+@media (max-width: 580px) {
+  .title h1 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 470px) {
+  .title h1 {
+    font-size: 25px;
+  }
+}
